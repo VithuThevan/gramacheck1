@@ -7,11 +7,11 @@ import { AuthProvider } from "@asgardeo/auth-react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const config = {
-  signInRedirectURL: process.env.REACT_APP_SIGNIN_REDIRECT_URL,
-  signOutRedirectURL: process.env.REACT_APP_SIGNOUT_REDIRECT_URL,
-  clientID: process.env.REACT_APP_CLIENT_ID,
-  clientSecret: process.env.REACT_APP_CLIENT_SECRET,
-  baseUrl: process.env.REACT_APP_BASE_URL,
+  signInRedirectURL: window.config.signin_redirect_url,
+  signOutRedirectURL: window.config.signout_redirect_url,
+  clientID: window.config.client_id,
+  clientSecret: window.config.client_secret,
+  baseUrl: window.config.base_url,
   scope: ["openid", "profile", "groups", "phone", "email"],
 };
 

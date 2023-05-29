@@ -6,6 +6,7 @@
 .pnp.js
 env.js
 .env
+/public/config.js
 
 /src/env.js
 

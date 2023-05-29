@@ -1,0 +1,39 @@
+/* ----- Button.scss ----- */
+@import "../../utils/styles/Theme.scss";
+
+.uiLibrary__button__primary {
+  width: 150px;
+  height: 50px;
+  background-color: $primary-regular;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  color: $white;
+  font-size: $font-medium;
+  font-weight: 700;
+  transition: background-color 0.5s ease-in-out;
+
+  &:hover {
+    background-color: darken($color: $primary-regular, $amount: 10%);
+  }
+}
+
+.uiLibrary__button__secondary {
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: $grey-light;
+
+  cursor: pointer;
+
+  font-size: $font-medium;
+  font-weight: 700;
+  transition: background-color 0.5s ease-in-out;
+
+  &:hover {
+    background-color: darken($color: $grey-light, $amount: 10%);
+  }
+}

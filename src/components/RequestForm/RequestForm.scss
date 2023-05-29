@@ -1,0 +1,138 @@
+/* ----- RequestForm.scss ----- */
+@import "../../utils/styles/Theme.scss";
+
+.requestForm {
+  width: 100%;
+  height: 100vh;
+  // background-color: lightgreen;
+
+  .requestForm__container {
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("../../assets/images/background/Background.png");
+    //   background-image: url("../../assets/images/background/Background.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .requestForm__content {
+    width: 100%;
+    height: calc(100vh - 80px);
+    // background-color: coral;
+
+    .requestForm__content__container {
+      width: 100%;
+      height: 100%;
+      // background-color: lightgreen;
+
+      margin: 0px auto;
+
+      overflow: auto;
+
+      @include flexbox;
+      align-items: flex-start;
+      padding-top: 100px;
+      padding-bottom: 100px;
+
+      .requestForm__content_card {
+        width: 500px;
+        min-height: 300px;
+        // background-color: coral;
+        background-color: $white;
+
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(69, 69, 86, 0.3);
+
+        padding: 30px;
+        .requestForm__content_card__title {
+          width: 100%;
+          height: 40px;
+          // background-color: lightblue;
+
+          @include flexbox;
+
+          p {
+            color: $primary-regular;
+            font-weight: $font-weight-bold;
+            font-size: $font-large;
+            text-transform: uppercase;
+          }
+        }
+
+        .requestForm__content_card__item__title {
+          height: 40px;
+          @include flexbox;
+          margin-bottom: 10px;
+          p {
+            width: 30%;
+            @include flexbox;
+
+            font-size: $font-regular;
+            font-weight: $font-weight-bold;
+            color: $primary-regular;
+          }
+          :first-child,
+          :last-child {
+            width: 40%;
+            height: 2px;
+            background-color: $primary-regular;
+          }
+        }
+
+        .requestForm__error__message {
+          width: 100%;
+          height: 20px;
+          // background-color: lightgreen;
+          font-size: $font-small;
+          color: $red-regular;
+
+          @include flexbox;
+          justify-content: flex-start;
+        }
+
+        .requestForm__content_card__button {
+          width: 100%;
+          height: 60px;
+          // background-color: lightblue;
+
+          @include flexbox;
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+
+@media (width<=700px) {
+  .requestForm {
+    .requestForm__container {
+      .requestForm__content {
+        .requestForm__content__container {
+          .requestForm__content_card {
+            width: 95%;
+
+            .requestForm__content_card__item__title {
+              p {
+                width: 40%;
+              }
+              :first-child,
+              :last-child {
+                width: 30%;
+                height: 2px;
+                background-color: $primary-regular;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

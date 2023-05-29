@@ -1,0 +1,90 @@
+/* ----- InputSelect.scss ----- */
+@import "../../utils/styles/Theme.scss";
+
+.inputSelect {
+  width: 100%;
+  height: 70px;
+//   background-color: lightpink;
+  margin-bottom: 10px;
+
+  position: relative;
+  .inputSelect__title {
+    width: 100%;
+    height: 30px;
+
+    @include flexbox;
+    justify-content: flex-start;
+
+    p {
+      font-size: $font-regular;
+      font-weight: $font-weight-bold;
+      color: $primary-regular;
+    }
+  }
+  .inputSelect__main {
+    width: 100%;
+    height: 40px;
+    // background-color: lightsalmon;
+    background-color: $white;
+
+    border: 1px solid rgba($color: $grey-regular, $alpha: 0.3);
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    @include flexbox;
+    justify-content: flex-start;
+    padding: 10px;
+
+    position: relative;
+    p {
+      font-size: $font-regular;
+      color: rgba($color: $grey-regular, $alpha: 0.5);
+    }
+
+    .inputSelect__main__icon {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+
+      :first-child {
+        color: $grey-regular;
+      }
+    }
+  }
+
+  .inputSelect__items {
+    width: 100%;
+    height: 200px;
+    // background-color: coral;
+    background-color: $white;
+
+    position: absolute;
+    top: 75px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(69, 69, 86, 0.3);
+
+    .inputSelect__items__container {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+
+      .inputSelect__item {
+        width: 100%;
+        height: 40px;
+        // background-color: lightgreen;
+
+        @include flexbox;
+        justify-content: flex-start;
+        padding: 10px;
+        transition: background-color 0.25s ease-in-out;
+
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba($color: $grey-regular, $alpha: 0.1);
+        }
+      }
+    }
+  }
+}

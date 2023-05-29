@@ -1,0 +1,118 @@
+/* ----- CheckStatus.scss ----- */
+@import "../../utils/styles/Theme.scss";
+
+.checkStatus {
+  width: 100%;
+  height: 100vh;
+  //   background-color: lightgreen;
+
+  .checkStatus__container {
+    width: 100%;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("../../assets/images/background/Background.png");
+    //   background-image: url("../../assets/images/background/Background.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .checkStatus__content {
+    width: 95%;
+    height: calc(100vh - 80px);
+    // background-color: coral;
+
+    margin: 0px auto;
+    padding-bottom: 50px;
+
+    @include flexbox;
+    flex-direction: column;
+
+    .checkStatus__content__image {
+      width: 100%;
+      height: 500px;
+      //   background-color: lightgreen;
+
+      @include flexbox;
+
+      img {
+        height: 400px;
+      }
+    }
+    .checkStatus__content__title1 {
+      width: 100%;
+      height: 80px;
+      //   background-color: lightcoral;
+
+      @include flexbox;
+
+      p {
+        font-size: 28px;
+        font-weight: $font-weight-extrabold;
+        color: $primary-regular;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+    .checkStatus__content__title2 {
+      width: 100%;
+      min-height: 100px;
+      //   background-color: lightgreen;
+
+      @include flexbox;
+
+      p {
+        font-size: $font-regular;
+        color: $grey-regular;
+        text-align: center;
+        text-transform: capitalize;
+      }
+    }
+    .checkStatus__content__buttons {
+      width: 100%;
+      height: 50px;
+      //   background-color: lightcoral;
+
+      @include flexbox;
+    }
+  }
+}
+
+// Media Queries
+
+@media (width<=700px) {
+  .checkStatus {
+    .checkStatus__container {
+      .checkStatus__content {
+        .checkStatus__content__image {
+          height: 300px;
+          img {
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (height<=700px) {
+  .checkStatus {
+    height: 600px;
+    .checkStatus__container {
+      .checkStatus__content {
+        height: unset;
+        .checkStatus__content__image {
+          height: 300px;
+          img {
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}

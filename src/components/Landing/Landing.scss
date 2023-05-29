@@ -1,0 +1,190 @@
+/* ----- Landing.scss ----- */
+@import "../../utils/styles/Theme.scss";
+
+.landing {
+  width: 100%;
+  height: 100vh;
+  // background-color: lightgreen;
+
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../../assets/images/background/Background.png");
+  //   background-image: url("../../assets/images/background/Background.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  .landing__logo {
+    width: 100%;
+    height: 100px;
+    // background-color: lightgreen;
+
+    @include flexbox;
+
+    .landing__logo__container {
+      width: 90%;
+      max-width: 2500px;
+      height: 100%;
+      // background-color: lightcoral;
+
+      @include flexbox;
+      justify-content: flex-start;
+
+      img {
+        height: 50px;
+      }
+    }
+  }
+  .landing__body {
+    width: 100%;
+    height: calc(100vh - 100px);
+    // background-color: lightcoral;
+
+    @include flexbox;
+
+    .landing__body__container {
+      width: 90%;
+      max-width: 2500px;
+      height: 100%;
+      // background-color: lightseagreen;
+
+      @include flexbox;
+
+      .landing__body__content {
+        width: 50%;
+        height: 100%;
+        // background-color: lightblue;
+
+        @include flexbox;
+        flex-direction: column;
+
+        .landing__body__text1 {
+          width: 100%;
+          min-height: 100px;
+          // background-color: lightcoral;
+          p {
+            font-size: 70px;
+            font-weight: 500;
+            color: $primary-regular;
+          }
+        }
+
+        .landing__body__text2 {
+          width: 100%;
+          height: 80px;
+          // background-color: lightgreen;
+
+          @include flexbox;
+          justify-content: flex-start;
+          p {
+            font-size: 24px;
+            font-weight: 500;
+            color: $grey-regular;
+          }
+        }
+        .landing__body__buttons {
+          width: 100%;
+          height: 60px;
+          // background-color: coral;
+
+          @include flexbox;
+          justify-content: flex-start;
+
+          :first-child {
+            margin-right: 20px;
+          }
+        }
+      }
+      .landing__body__image {
+        width: 50%;
+        height: 100%;
+        // background-color: coral;
+
+        @include flexbox;
+        align-items: center;
+        img {
+          height: 300px;
+          // width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+
+@media (width<=1000px) {
+  .landing {
+    // height: unset;
+    // background-color: lightgreen;
+    .landing__logo {
+      .landing__logo__container {
+        justify-content: center;
+      }
+    }
+    .landing__body {
+      @include flexbox;
+      .landing__body__container {
+        flex-direction: column-reverse;
+        padding-top: 100px;
+
+        .landing__body__content {
+          width: 100%;
+          padding-top: 0px;
+
+          .landing__body__text1 {
+            min-height: 60px;
+
+            @include flexbox;
+            p {
+              font-size: 28px;
+              text-align: center;
+            }
+          }
+          .landing__body__text2 {
+            height: 40px;
+            justify-content: center;
+          }
+          .landing__body__text2 {
+            height: 40px;
+            justify-content: center;
+
+            p {
+              font-size: $font-medium;
+              text-align: center;
+            }
+          }
+          .landing__body__buttons {
+            justify-content: center;
+          }
+        }
+        .landing__body__image {
+          width: 100%;
+          height: 300px;
+
+          padding-top: 0px;
+
+          @include flexbox;
+          img {
+            width: unset;
+            height: 250px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (height<=600px) {
+  .landing {
+    height: 700px;
+
+    .landing__body {
+      height: 600px;
+    }
+  }
+}

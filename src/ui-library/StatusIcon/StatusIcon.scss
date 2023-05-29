@@ -1,0 +1,49 @@
+/* ----- StatusIcon.scss ----- */
+@import "../../utils/styles/Theme.scss";
+
+.uiLibrary__statusIcon__pending {
+  width: 80px;
+  height: 30px;
+  background-color: $yellow-light;
+  border-radius: 20px;
+  border: 1px solid $yellow-regular;
+
+  @include flexbox;
+
+  p {
+    font-size: $font-small;
+    color: $yellow-regular;
+    text-transform: capitalize;
+  }
+}
+
+.uiLibrary__statusIcon__rejected {
+  width: 80px;
+  height: 30px;
+  background-color: $red-light;
+  border-radius: 20px;
+  border: 1px solid $red-regular;
+
+  @include flexbox;
+
+  p {
+    font-size: $font-small;
+    color: $red-regular;
+    text-transform: capitalize;
+  }
+}
+.uiLibrary__statusIcon__approved {
+  width: 80px;
+  height: 30px;
+  background-color: $green-light;
+  border-radius: 20px;
+  border: 1px solid $green-regular;
+
+  @include flexbox;
+
+  p {
+    font-size: $font-small;
+    color: $green-regular;
+    text-transform: capitalize;
+  }
+}

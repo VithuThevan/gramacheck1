@@ -1,0 +1,99 @@
+/* ----- Theme.scss ----- */
+
+//? Colors
+$primary-regular: #625D9F;
+
+$red-light: #ffe7e7;
+$red-regular: #d60024;
+
+$yellow-light: #fff7e6;
+$yellow-regular: #cc8900;
+
+$green-light: #d6f9e8;
+$green-regular: #227754;
+
+$grey-light: #DADADA;
+$grey-regular: #454556;
+
+$white: #ffffff;
+$black: #000000;
+
+//? Font Sizes
+$font-thin: 8px;
+$font-light: 10px;
+$font-small: 12px;
+$font-regular: 14px;
+$font-medium: 16px;
+$font-large: 18px;
+$font-max: 20px;
+
+//? Font Weight
+$font-weight-thin: 100;
+$font-weight-extralight: 200;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+//? Icon Sizes
+$icon-thin: 12px;
+$icon-light: 16px;
+$icon-small: 20px;
+$icon-regular: 24px;
+$icon-large: 28px;
+$icon-max: 32px;
+
+//? Mixins
+
+//* Flexbox
+@mixin flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//* Buttons
+@mixin BUTTON_ORANAGE_DARK {
+  min-width: 150px;
+  background-color: $primary-regular;
+
+  padding: 10px;
+
+  border: 2px solid $primary-regular;
+  border-radius: 5px;
+
+  color: $white;
+  font-size: $font-regular;
+  font-weight: $font-weight-bold;
+
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out,
+    border 0.25s ease-in-out;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($color: $primary-regular, $amount: 5%);
+    border-color: darken($color: $primary-regular, $amount: 5%);
+  }
+}
+
+//* Input
+
+@mixin INPUT {
+  min-width: 150px;
+  padding: 8px;
+
+  border: 1px solid rgba($color: $grey-regular, $alpha: 0.5);
+  border-radius: 5px;
+  font-family: "Poppins";
+  color: $grey-light;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+//? Global

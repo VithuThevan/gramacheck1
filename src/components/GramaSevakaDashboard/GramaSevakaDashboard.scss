@@ -1,0 +1,421 @@
+/* ----- GramaSevakaDashboard.scss ----- */
+@import "../../utils/styles/Theme.scss";
+
+.gramaSevakaDashboard {
+  width: 100%;
+  height: 100vh;
+  // background-color: lightgreen;
+
+  .gramaSevakaDashboard__container {
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("../../assets/images/background/Background.png");
+    //   background-image: url("../../assets/images/background/Background.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .gramaSevakaDashboard__content {
+    width: 100%;
+    height: calc(100vh - 80px);
+    // background-color: coral;
+
+    .gramaSevakaDashboard__content__container {
+      width: 100%;
+      height: 100%;
+      // background-color: lightgreen;
+
+      margin: 0px auto;
+
+      overflow: auto;
+
+      padding-bottom: 100px;
+
+      .gramaSevakaDashboard__title {
+        width: 90%;
+        height: 60px;
+        // background-color: lightgreen;
+
+        @include flexbox;
+
+        margin: 0px auto;
+
+        p {
+          color: $primary-regular;
+          font-size: $font-max;
+          font-weight: $font-weight-bold;
+          text-transform: uppercase;
+          text-align: center;
+        }
+      }
+
+      .gramaSevakaDashboard__header {
+        width: 90%;
+        height: 60px;
+        // background-color: coral;
+
+        margin: 0px auto;
+        margin-bottom: 10px;
+
+        background-color: rgba($primary-regular, 0.7);
+
+        @include flexbox;
+
+        border-radius: 5px;
+
+        .gramaSevakaDashboard__header__item {
+          height: 100%;
+          width: 33.4%;
+          // background-color: lightblue;
+
+          .gramaSevakaDashboard__header__item__title {
+            width: 100%;
+            height: 100%;
+
+            @include flexbox;
+
+            p {
+              color: $white;
+              font-size: $font-regular;
+              font-weight: $font-weight-bold;
+            }
+          }
+        }
+      }
+
+      .gramaSevakaDashboard__body {
+        .gramaSevakaDashboard__body__item {
+          width: 90%;
+          min-height: 60px;
+          // background-color: coral;
+
+          margin: 0px auto;
+
+          background-color: rgba($white, 0.4);
+
+          @include flexbox;
+
+          .gramaSevakaDashboard__body__item__email {
+            min-height: 60px;
+            width: 33.4%;
+            // background-color: lightblue;
+
+            border-bottom: 1px solid rgba($color: $grey-regular, $alpha: 0.1);
+
+            @include flexbox;
+
+            p {
+              color: $primary-regular;
+              font-size: $font-regular;
+              font-weight: $font-weight-medium;
+              word-break: break-all;
+              padding: 0px 15px;
+            }
+          }
+          .gramaSevakaDashboard__body__item__status {
+            min-height: 60px;
+            width: 33.4%;
+            // background-color: lightblue;
+
+            border-bottom: 1px solid rgba($color: $grey-regular, $alpha: 0.1);
+
+            @include flexbox;
+          }
+          .gramaSevakaDashboard__body__item__action {
+            min-height: 60px;
+            width: 33.4%;
+            // background-color: lightblue;
+
+            border-bottom: 1px solid rgba($color: $grey-regular, $alpha: 0.1);
+
+            @include flexbox;
+
+            :first-child {
+              color: $grey-regular;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .gramaSevakaDashboard__popup {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+
+    .gramaSevakaDashboard__popup__header {
+      width: 100%;
+      height: 40px;
+      // background-color: coral;
+
+      @include flexbox;
+
+      p {
+        color: $primary-regular;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+      }
+    }
+    .gramaSevakaDashboard__popup__body {
+      .gramaSevakaDashboard__popup__body__generalDeails__fallback {
+        width: 100%;
+        height: 50px;
+        background-color: lightgreen;
+        background-color: rgba($red-light, 1);
+
+        @include flexbox;
+
+        border-radius: 5px;
+        p {
+          color: $red-regular;
+        }
+      }
+    }
+
+    .gramaSevakaDashboard__popup__buttons {
+      width: 100%;
+      height: 100px;
+      // background-color: lightgreen;
+
+      @include flexbox;
+
+      :first-child {
+        margin-right: 10px;
+      }
+
+      :last-child {
+        margin-left: 10px;
+      }
+    }
+  }
+  .gramaSevakaDashboard__popup__reject {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+
+    .gramaSevakaDashboard__popup__reject__header {
+      width: 100%;
+      height: 40px;
+      // background-color: coral;
+
+      @include flexbox;
+
+      p {
+        color: $primary-regular;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+      }
+    }
+
+    .gramaSevakaDashboard__popup__reject__image {
+      width: 100%;
+      height: 250px;
+      // background-color: coral;
+
+      @include flexbox;
+
+      img {
+        height: 200px;
+      }
+    }
+
+    .gramaSevakaDashboard__popup__reject__text {
+      width: 100%;
+      height: 40px;
+      // background-color: lightblue;
+
+      @include flexbox;
+      margin: 10px 0px;
+      margin-bottom: 40px;
+      p {
+        font-size: $font-regular;
+        color: $grey-regular;
+        text-align: center;
+      }
+    }
+    .gramaSevakaDashboard__popup__reject__textarea {
+      width: 100%;
+      // background-color: lightcoral;
+    }
+    .gramaSevakaDashboard__popup__reject__buttons {
+      width: 100%;
+      height: 100px;
+      // background-color: lightgreen;
+
+      @include flexbox;
+    }
+  }
+
+  .gramaSevakaDashboard__popup__approve {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+
+    .gramaSevakaDashboard__popup__approve__header {
+      width: 100%;
+      height: 40px;
+      // background-color: coral;
+
+      @include flexbox;
+
+      p {
+        color: $primary-regular;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+      }
+    }
+
+    .gramaSevakaDashboard__popup__approve__image {
+      width: 100%;
+      height: 250px;
+      // background-color: coral;
+
+      @include flexbox;
+
+      img {
+        height: 200px;
+      }
+    }
+
+    .gramaSevakaDashboard__popup__approve__text {
+      width: 100%;
+      height: 40px;
+      // background-color: lightblue;
+
+      @include flexbox;
+
+      p {
+        font-size: $font-regular;
+        color: $grey-regular;
+        text-align: center;
+      }
+    }
+    .gramaSevakaDashboard__popup__approve__buttons {
+      width: 100%;
+      height: 100px;
+      // background-color: lightgreen;
+
+      @include flexbox;
+    }
+  }
+}
+
+.requestDetailsItemHeader {
+  width: 100%;
+  min-height: 40px;
+  // background-color: lavender;
+
+  @include flexbox;
+  justify-content: flex-start;
+
+  margin: 10px 0px;
+  :first-child,
+  :last-child {
+    width: 25%;
+    height: 2px;
+    background-color: $primary-regular;
+  }
+
+  p {
+    width: 50%;
+    @include flexbox;
+
+    font-size: $font-regular;
+    font-weight: $font-weight-medium;
+    color: $primary-regular;
+    word-wrap: break-word;
+
+    padding: 10px;
+    text-align: center;
+  }
+}
+.requestDetailsItemSubHeader {
+  width: 100%;
+  height: 30px;
+  // background-color: lightpink;
+
+  @include flexbox;
+  justify-content: flex-start;
+  p {
+    font-size: $font-regular;
+    font-weight: $font-weight-medium;
+    color: $grey-regular;
+    text-decoration: underline;
+  }
+}
+.requestDetailsItem {
+  width: 100%;
+  min-height: 30px;
+  // background-color: lightgreen;
+  margin-bottom: 5px;
+
+  @include flexbox;
+
+  .requestDetailsItem__title {
+    width: 40%;
+    height: 100%;
+    // background-color: lightcoral;
+
+    @include flexbox;
+    justify-content: flex-start;
+
+    padding-right: 10px;
+
+    p {
+      font-weight: $font-weight-medium;
+      color: $primary-regular;
+      word-wrap: break-word;
+    }
+  }
+  .requestDetailsItem__seperator {
+    height: 100%;
+    // background-color: lightseagreen;
+
+    @include flexbox;
+
+    p {
+      height: 100%;
+      font-weight: $font-weight-medium;
+      color: $primary-regular;
+    }
+  }
+
+  .requestDetailsItem__value {
+    width: 60%;
+    height: 100%;
+    // background-color: lightcyan;
+
+    padding-left: 10px;
+
+    .requestDetailsItem__value__text {
+      color: $grey-regular;
+      word-wrap: break-word;
+    }
+  }
+}
+
+// Media Queries
+
+@media (width<=700px) {
+  .gramaSevakaDashboard {
+    .gramaSevakaDashboard__content {
+      .gramaSevakaDashboard__content__container {
+        .gramaSevakaDashboard__title {
+          height: 80px;
+        }
+      }
+    }
+  }
+}

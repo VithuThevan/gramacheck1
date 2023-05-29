@@ -1,0 +1,47 @@
+/* ----- InputText.scss ----- */
+@import "../../utils/styles/Theme.scss";
+
+.inputText {
+  width: 100%;
+  height: 70px;
+//   background-color: lightgreen;
+  margin-bottom: 10px;
+
+  .inputText__title {
+    width: 100%;
+    height: 30px;
+    // background-color: lightpink;
+
+    @include flexbox;
+    justify-content: flex-start;
+
+    p {
+      font-size: $font-regular;
+      font-weight: $font-weight-bold;
+      color: $primary-regular;
+    }
+  }
+
+  .inputText__input {
+    width: 100%;
+    height: 30px;
+    // background-color: lightsalmon;
+
+    input {
+      width: 100%;
+      height: 40px;
+
+      border: 1px solid rgba($color: $grey-regular, $alpha: 0.3);
+      border-radius: 5px;
+      padding: 10px;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: $font-regular;
+      color: $grey-regular;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+/* ----- Popup.scss ----- */
+@import "../../utils/styles/Theme.scss";
+
+.popup {
+  width: 100%;
+  max-height: 100%;
+  background-color: lightgreen;
+  background-color: rgba($grey-regular, 0.7);
+
+  padding: 100px 0px;
+
+  overflow: auto;
+  min-height: 100%;
+
+  .popup__container {
+    min-height: 100%;
+    width: 100%;
+
+    @include flexbox;
+    align-items: flex-start;
+
+    .popup__card {
+      width: 600px;
+      min-height: 10px;
+      // background-color: coral;
+      background-color: $white;
+
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(69, 69, 86, 0.3);
+
+      padding: 30px;
+
+      .popup__card__close {
+        width: 100%;
+        height: 30px;
+        // background-color: lightgreen;
+
+        @include flexbox;
+        justify-content: flex-end;
+        :first-child {
+          color: $grey-regular;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+
+@media (width<=700px) {
+  .popup {
+    .popup__container {
+      .popup__card {
+        width: 90%;
+      }
+    }
+  }
+}

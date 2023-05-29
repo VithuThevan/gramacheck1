@@ -1,0 +1,26 @@
+/* ----- Popup.scss ----- */
+@import "../../utils/styles/Theme.scss";
+
+.inputTextArea {
+  width: 100%;
+  //   background-color: lightgreen;
+
+  margin: 20px 0px;
+
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+    border: 1px solid rgba($color: $grey-regular, $alpha: 0.3);
+    border-radius: 5px;
+
+    padding: 10px;
+
+    font-family: "Montserrat";
+    color: $grey-regular;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

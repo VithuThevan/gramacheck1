@@ -74,7 +74,6 @@ function App() {
           </Switch>
         ) : (
           <Switch>
-            {/* Landing */}
             <Route path="/">
               <LandingPage />
             </Route>

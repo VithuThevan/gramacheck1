@@ -10,7 +10,6 @@ RUN if [ -f "./package-lock.json" ]; then npm install; \
 COPY . .
 RUN npm run build
 
-
 FROM nginxinc/nginx-unprivileged:stable-alpine-slim
 
 # Update nginx user/group in alpine

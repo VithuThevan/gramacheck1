@@ -10,6 +10,7 @@ RUN if [ -f "./package-lock.json" ]; then npm install; \
 COPY . .
 RUN npm run build
 
+
 FROM nginxinc/nginx-unprivileged:stable-alpine-slim
 
 # Update nginx user/group in alpine
@@ -21,7 +22,7 @@ ENV GROUP_NGINX=10015
 # COPY --from=builder /build /usr/share/nginx/html/
 COPY --from=builder /app/build /usr/share/nginx/html/
 # COPY nginx.conf /usr/local/etc/nginx
-COPY nginx.conf /usr/share/nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 USER 10015
 EXPOSE 8080

@@ -183,6 +183,29 @@ function GramaSevakaDashboard() {
 
   const [value, setValue] = useState("");
   const updateStatus = (requestId, status, reason) => {
+    var API_HOST_SMS = "https://f82fbb50-01e1-4078-a9f8-0d4ed79a518a-dev.e1-us-east-azure.choreoapis.dev/sbmq/vonage/vonageapp-05b/1.0.0";
+    var contact_number = 765449380;
+    var url_sms = API_HOST_SMS + `/help?contact_number=${contact_number}`;
+
+    var requestSMS = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + TOKEN,
+      },
+      redirect: "follow",
+    };
+
+    fetch(url_sms, requestSMS)
+      .then((response) => {
+        if (response.ok) {
+
+          toast.success("SMS sent successfully sent to Citizen!", TOAST_PROPERTIES);
+        }
+      })
+      .catch((error) => {
+        toast.error("Error in sending the SMS!", TOAST_PROPERTIES);
+      });
     console.log("Update Status");
     const url = API_HOST + "/request/" + requestId;
     const requestStatus = {
@@ -243,30 +266,30 @@ function GramaSevakaDashboard() {
               {requests === undefined
                 ? ""
                 : requests.map((request, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className="gramaSevakaDashboard__body__item"
-                      >
-                        <div className="gramaSevakaDashboard__body__item__email">
-                          <p>{request.email}</p>
-                        </div>
-                        <div className="gramaSevakaDashboard__body__item__status">
-                          <StatusIcon variant={request.status} />
-                        </div>
-                        <div className="gramaSevakaDashboard__body__item__action">
-                          <SettingsIcon
-                            onClick={() => {
-                              setDisplayPopup(!displayPopup);
-                              setRequest(request);
-                              getCitizen(request.nic_number);
-                              checkAPI(request.request_id, request.nic_number);
-                            }}
-                          />
-                        </div>
+                  return (
+                    <div
+                      key={index}
+                      className="gramaSevakaDashboard__body__item"
+                    >
+                      <div className="gramaSevakaDashboard__body__item__email">
+                        <p>{request.email}</p>
                       </div>
-                    );
-                  })}
+                      <div className="gramaSevakaDashboard__body__item__status">
+                        <StatusIcon variant={request.status} />
+                      </div>
+                      <div className="gramaSevakaDashboard__body__item__action">
+                        <SettingsIcon
+                          onClick={() => {
+                            setDisplayPopup(!displayPopup);
+                            setRequest(request);
+                            getCitizen(request.nic_number);
+                            checkAPI(request.request_id, request.nic_number);
+                          }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>
@@ -373,7 +396,7 @@ function GramaSevakaDashboard() {
           </div>
           <div className="gramaSevakaDashboard__popup__buttons">
             {request.status === "rejected" ||
-            request.status === "approved" ? null : (
+              request.status === "approved" ? null : (
               <div className="gramaSevakaDashboard__popup__buttons">
                 <Button
                   variant="primary"

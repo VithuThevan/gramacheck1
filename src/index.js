@@ -16,6 +16,9 @@ const config = {
   scope: ["openid", "profile", "groups", "phone", "email"],
 };
 
+//config credentials
+
+
 // const config = {
 //   signInRedirectURL: SIGNIN_REDIRECT_URL,
 //   signOutRedirectURL: SIGNOUT_REDIRECT_URL,
